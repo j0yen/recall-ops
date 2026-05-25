@@ -2,6 +2,24 @@
 
 > PRD-agentic-memory §A items 4/5/7/8/9 (touch/update/gc/stats/lineage) — operational maintenance commands missing from recall v0.1 that /self-review hand-rolls today.
 
+## Install
+
+### One-liner
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/j0yen/recall-ops/main/install.sh | bash
+```
+
+### Manual
+
+```sh
+git clone --depth 1 https://github.com/j0yen/recall-ops.git
+cd recall-ops
+./install.sh
+```
+
+Installs the `recall-ops` binary via `cargo install --path . --locked`. Requires `cargo` / `rustc 1.85+` and `git`. Built binary lands in `~/.cargo/bin/`.
+
 ## Why
 
 PRD-agentic-memory §A items 4/5/7/8/9 (touch/update/gc/stats/lineage) — operational maintenance commands missing from recall v0.1 that /self-review hand-rolls today. Like recall-doctor (slice 1 of v0.2), this ships standalone alongside the deployed v0.1 binary; full absorption into a v0.2 recall binary is later work. Each subcommand reads and (where applicable) writes the index + .md store using sqlite3 shell-out, preserving the existing schema byte-compatibly.
